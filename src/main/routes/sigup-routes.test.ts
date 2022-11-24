@@ -1,5 +1,6 @@
 import request from 'supertest'
 import { MongoHelper } from '../../infra/db/mongodb/account-repository/helpers/mongo.helper'
+
 import app from '../config/app'
 
 describe('SignUp Routes', () => {
@@ -20,10 +21,10 @@ describe('SignUp Routes', () => {
     await request(app)
       .post('/api/signup')
       .send({
-        name: '',
-        email: '',
-        password: '',
-        passwordConfirmationn: ''
+        name: 'Luan',
+        email: 'luanBanhos@gmail.com',
+        password: 'Luan123',
+        passwordConfirmation: 'Luan123'
       })
       .expect(200)
   })
